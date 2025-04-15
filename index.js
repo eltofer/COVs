@@ -1,3 +1,4 @@
+
 const btnCart = document.querySelector('.container-cart-icon');
 const containerCartProducts = document.querySelector(
 	'.container-cart-products'
@@ -118,10 +119,36 @@ const showHTML = () => {
 		rowProduct.append(containerProduct);
 
 		total =
-			total + parseInt(product.quantity * product.price.slice(1));
+			total + parseFloat(product.quantity * product.price.slice(1));
 		totalOfProducts = totalOfProducts + product.quantity;
 	});
 
-	valorTotal.innerText = `$${total}`;
+	valorTotal.innerText = `%${total}`;
 	countProducts.innerText = totalOfProducts;
 };
+
+
+function cargarCOVs()
+{
+	var HTMLCOVs = document.getElementById("listaCOVs");
+	
+	var nuevoHTMLCOVs = "";
+	for(let i = 0; i <= listaCOVs.length - 1; i++)
+		{
+			nuevoHTMLCOVs +=  "			<div class=\"item\">";
+			nuevoHTMLCOVs +=  "				<figure>";
+			nuevoHTMLCOVs +=  "					<img";
+			nuevoHTMLCOVs +=  "						src=\"" + listaCOVs[i].Imagen + ".png\"";
+			nuevoHTMLCOVs +=  "						alt=\"producto\"";
+			nuevoHTMLCOVs +=  "					/>";
+			nuevoHTMLCOVs +=  "				</figure>";
+			nuevoHTMLCOVs +=  "				<div class=\"info-product\">";
+			nuevoHTMLCOVs +=  "					<h2>" + listaCOVs[i].Nombre + "</h2>";
+			nuevoHTMLCOVs +=  "					<p class=\"PorcentajeM2\">% " + listaCOVs[i].PorcentajeM2 + "</p>";
+			nuevoHTMLCOVs +=  "					<button class=\"btn-add-cart\">Añadir</button>";
+			nuevoHTMLCOVs +=  "				</div>";
+			nuevoHTMLCOVs +=  "			</div>";
+
+		}
+	HTMLCOVs.innerHTML = nuevoHTMLCOVs;
+}

@@ -9,8 +9,10 @@
 		/>
 		<title>COVs</title>
 		<link rel="stylesheet" href="styles.css" />
+		<script src="listaCOVs.js"></script>
+
 	</head>
-	<body>
+	<body onload="cargarCOVs();">
 		<header>
 			<h1>Cálculo general</h1>
 
@@ -61,14 +63,14 @@
 					</div>
 
 					<div class="cart-total hidden">
-						<h3>Total:</h3>
-						<span class="total-pagar">$200</span>
+						<h3>Total: </h3>
+						<span class="total-pagar">%0</span>
 					</div>
-					<p class="cart-empty">El carrito está vacío</p>
+					<p class="cart-empty">No hay elementos seleccionados</p>
 				</div>
 			</div>
 		</header>
-		<div class="container-items">
+		<div class="container-items" id="listaCOVs">
 			<div class="item">
 				<figure>
 					<img
